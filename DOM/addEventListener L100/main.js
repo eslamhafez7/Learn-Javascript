@@ -6,6 +6,24 @@
 Search 
     - Capture & Bubbling javascript
     - removeEventListener
+const outer = document.getElementById('outer');
+const inner = document.getElementById('inner');
+const button = document.getElementById('button');
+
+function handleEvent(event) {
+    console.log('Event handled:', event.target.id);
+}
+
+outer.addEventListener('click', handleEvent, true);
+inner.addEventListener('click', handleEvent, true); 
+button.addEventListener('click', handleEvent, false);
+
+function handleClick(event) {
+    console.log('Button clicked!');
+}
+
+    button.addEventListener('click', handleClick);
+    button.removeEventListener('click', handleClick);
 */
 
 
@@ -65,4 +83,3 @@ document.addEventListener("click", (e) => {
     };
 });
 */
-
